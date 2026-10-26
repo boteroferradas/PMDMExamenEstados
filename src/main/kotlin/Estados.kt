@@ -1,4 +1,4 @@
-import Gestor.estado_acual
+import Gestor.estado_actual
 import Gestor.nivel_actual
 
 sealed class Estados {
@@ -7,11 +7,12 @@ sealed class Estados {
             if (nivel_actual == Niveles.NIVEL0) {
                 println("Se encuentra en $nivel_actual")
                 nivel_actual = Niveles.NIVEL2
-                estado_acual = MovingUP
-            } else {
+                estado_actual = MovingUP
+            }
+            else if (nivel_actual == Niveles.NIVEL1) {
                 println("Se encuentra en $nivel_actual")
                 nivel_actual = Niveles.NIVEL2
-                estado_acual = MovingDOWN
+                estado_actual = MovingDOWN
             }
         }
     }
@@ -21,7 +22,7 @@ sealed class Estados {
             println("Subiendo a Plaza de Compostela")
             Thread.sleep(2000)
             println("Destino alcanzado")
-            estado_acual = Idle
+            estado_actual = Idle
             nivel_actual = Niveles.NIVEL1
         }
     }
@@ -30,7 +31,7 @@ sealed class Estados {
             println(nivel_actual)
             println("Bajando a Avenida Garcia Borbón")
             Thread.sleep(2000)
-            estado_acual = Idle
+            estado_actual = Idle
             nivel_actual = Niveles.NIVEL1
         }
     }

@@ -1,12 +1,15 @@
+import Gestor.estado_acual
+import Gestor.nivel_actual
+
 sealed class Estados {
     object Idle : Estados() {
         fun onenter() {
             if (nivel_actual == Niveles.NIVEL0) {
-                println("Se encuentra en" + nivel_actual)
+                println("Se encuentra en $nivel_actual")
                 nivel_actual = Niveles.NIVEL2
                 estado_acual = MovingUP
             } else {
-                println("Se encuentra en" + nivel_actual)
+                println("Se encuentra en $nivel_actual")
                 nivel_actual = Niveles.NIVEL2
                 estado_acual = MovingDOWN
             }
@@ -22,7 +25,7 @@ sealed class Estados {
     }
     object MovingDOWN : Estados() {
         fun onenter() {
-            println("Bajando a Avenida Garcia Borbon")
+            println("Bajando a Avenida Garcia Borbón")
             Thread.sleep(2000)
             estado_acual = Idle
             nivel_actual = Niveles.NIVEL1

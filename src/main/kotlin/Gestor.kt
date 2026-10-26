@@ -1,24 +1,31 @@
-// nivel en el que se encuentra el ascensor
-var nivel_actual: Niveles = Niveles.NIVEL0
-// estado actual del ascensor
-var estado_acual: Estados = Estados.Idle
+object Gestor {
 
-/**
- * Gestiona el cambio de estados
- */
-fun gestor() {
-    when (estado_acual) {
-        is Estados.Idle -> {
-            nivel_actual = Niveles.NIVEL0
-        }
-        is Estados.MovingUP -> {
-            nivel_actual = Niveles.NIVEL2
-        }
-        is Estados.MovingDOWN -> {
-            nivel_actual = Niveles.NIVEL2
-        }
-        is Estados.Error -> {
-            nivel_actual = Niveles.NIVELERROR
+    // nivel en el que se encuentra el ascensor
+    var nivel_actual: Niveles = Niveles.NIVEL0
+
+    // estado actual del ascensor
+    var estado_acual: Estados = Estados.Idle
+
+    /**
+     * Gestiona el cambio de estados
+     */
+    fun gestor() {
+        when (estado_acual) {
+            is Estados.Idle -> {
+                (estado_acual as Estados.Idle).onenter()
+            }
+
+            is Estados.MovingUP -> {
+                (estado_acual as Estados.MovingUP).onenter()
+            }
+
+            is Estados.MovingDOWN -> {
+                (estado_acual as Estados.MovingDOWN).onenter()
+            }
+
+            is Estados.Error -> {
+                println("El acensor tuvo un error ${(estado_acual as Estados.Error).mensaje}")
+            }
         }
     }
 }

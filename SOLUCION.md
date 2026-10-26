@@ -24,15 +24,15 @@ Se ha implementado una Enum class para controlar los niveles en los que se encue
 
 ## Tests
 
-![img.png](img.png)
+![img.png](capturas/img.png)
 
-![img_1.png](img_1.png)
+![img_1.png](capturas/img_1.png)
 
-![img_2.png](img_2.png)
+![img_2.png](capturas/img_2.png)
 
-![img_3.png](img_3.png)
+![img_3.png](capturas/img_3.png)
 
-![img_4.png](img_4.png)
+![img_4.png](capturas/img_4.png)
 
 ## Diagrama de estados
 ```mermaid

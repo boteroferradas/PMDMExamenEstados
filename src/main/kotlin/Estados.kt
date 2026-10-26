@@ -17,14 +17,17 @@ sealed class Estados {
     }
     object MovingUP : Estados() {
         fun onenter() {
-            print("Subiendo a Plaza de Compostela")
+            println(nivel_actual)
+            println("Subiendo a Plaza de Compostela")
             Thread.sleep(2000)
+            println("Destino alcanzado")
             estado_acual = Idle
             nivel_actual = Niveles.NIVEL1
         }
     }
     object MovingDOWN : Estados() {
         fun onenter() {
+            println(nivel_actual)
             println("Bajando a Avenida Garcia Borbón")
             Thread.sleep(2000)
             estado_acual = Idle

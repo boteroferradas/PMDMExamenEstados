@@ -1,11 +1,11 @@
 enum class Niveles(val nombre: String) {
-    NIVEL0("Nivel 0"),
-    NIVEL1("Nivel 1"),
-    NIVEL2( "Nivel 2"),
-    NIVELERROR("Nivel -1"), ;
+    NIVEL0("Nivel 0: Avenida Garcia Borbón"),
+    NIVEL1("Nivel 1: Plaza de Compostela"),
+    NIVEL2( "Nivel 2: Moviéndose"),
+    NIVELERROR("Nivel -1: Error"), ;
 
     override fun toString(): String {
-        return "Nivel actual: $nombre)"
+        return nombre
     }
 
 

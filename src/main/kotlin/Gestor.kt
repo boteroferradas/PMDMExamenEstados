@@ -23,7 +23,7 @@ object Gestor {
             }
 
             is Estados.Error -> {
-                println("El acensor tuvo un error ${(estado_actual as Estados.Error).mensaje}")
+                println("El ascensor tuvo un error: ${(estado_actual as Estados.Error).mensaje}")
             }
         }
     }
